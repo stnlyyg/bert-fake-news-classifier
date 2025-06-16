@@ -1,0 +1,1 @@
+# Create simple Gradio app → Load model → Predict news text input
