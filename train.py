@@ -16,18 +16,26 @@ training_args = TrainingArguments(
     output_dir = "model/fake-news-detection",
     seed = 42,
     fp16 = True,
+
+    num_train_epochs = 3,
+    learning_rate = 2e-5,
+    weight_decay = 0.1,
+    warmup_ratio = 0.5,
+
+    per_device_train_batch_size = 8,
+    gradient_accumulation_steps = 2,
+    per_device_eval_batch_size = 8,
+
     eval_strategy = "epoch",
     save_strategy = "epoch",
-    learning_rate = 5e-5,
-    per_device_train_batch_size = 4,
-    gradient_accumulation_steps = 2,
-    per_device_eval_batch_size = 4,
-    num_train_epochs = 5,
-    weight_decay = 0.01,
-    logging_dir = "./logs",
     load_best_model_at_end = True,
     metric_for_best_model = "f1",
-    save_total_limit = 1
+    save_total_limit = 1,
+
+    logging_dir = "./logs",
+    logging_strategy = "steps",
+    logging_steps = 100,
+    report_to = "tensorboard"
 )
 
 trainer = Trainer(
@@ -39,4 +47,5 @@ trainer = Trainer(
     compute_metrics = compute_metrics
 )
 
-trainer.train()
+if __name__ == '__main__':
+    trainer.train()
