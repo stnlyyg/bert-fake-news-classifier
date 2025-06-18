@@ -10,7 +10,10 @@ finetuned_tokenizer = AutoTokenizer.from_pretrained(model_path)
 
 labels = ['Real', 'Fake']
 
-def classify_news(text):
+def classify_news(text: str):
+    if not text or not text.strip():
+        return f'Please enter some news text to classify.'
+
     inputs = finetuned_tokenizer(text, return_tensors='pt', truncation=True, padding=True, max_length=256)
 
     with torch.no_grad():
@@ -24,6 +27,15 @@ def classify_news(text):
 
     return f'This news is: {predicted_label}, confidence: {confidence}'
 
+def classifier_app():
+    demo_app = gr.Interface(
+        fn=classify_news,
+        inputs=gr.TextArea(placeholder="Enter any news...", label='Input news: '),
+        outputs=gr.TextArea(label="News classified as: "),
+        title="Fake News Classifier"
+    )
+
+    demo_app.launch()
+
 if __name__ == '__main__':
-    news = input("Enter news: ")
-    print(classify_news(news))
+    classifier_app()

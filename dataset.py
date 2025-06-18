@@ -6,7 +6,9 @@ from sklearn.model_selection import train_test_split
 from datasets import Dataset
 from transformers import AutoTokenizer
 
-df = pd.read_csv('../fakenewsdata.csv')
+#https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification
+
+df = pd.read_csv('fakenewsdata.csv')
 
 df.dropna(inplace=True)
 df['text'] = df['title'] + ". " + df['text']
@@ -36,4 +38,4 @@ train_encodings = tokenize_function(train_texts)
 eval_encodings = tokenize_function(eval_texts)
 
 train_dataset = Dataset.from_dict({'input_ids': train_encodings['input_ids'], 'attention_mask': train_encodings['attention_mask'], 'label': train_labels})
-eval_dataset = Dataset.from_dict({'input_ids': eval_encodings['input_ids'], 'attention_mask': eval_encodings['attention_mask'], 'label': eval_labels})
+eval_dataset = Dataset.from_dict({'input_ids': eval_encodings['input_ids'], 'attention_mask': eval_encodings['attention_mask'], 'label': eval_labels})  

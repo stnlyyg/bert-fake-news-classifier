@@ -2,5 +2,6 @@ __pycache__/
 logs/
 model/
 
+fakenewsdata.csv
 temp.py
 experiments.ipynb  
