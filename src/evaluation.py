@@ -4,22 +4,16 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
 from sklearn.metrics import classification_report, confusion_matrix
-from dataset import eval_dataset
-
-model_path = "model/fake-news-detection/checkpoint-10731"
+from data_processing import eval_dataset
+import config
 
 def evaluate_model():
-    bert_model = AutoModelForSequenceClassification.from_pretrained(model_path)
+    this_model = AutoModelForSequenceClassification.from_pretrained(config.BASE_MODEL_PATH)
 
-    eval_args = TrainingArguments(
-        output_dir = "./eval_results",
-        per_device_eval_batch_size = 8,
-        do_train = False,
-        do_eval = True
-    )
+    eval_args = TrainingArguments(**config.EVAL_ARGS)
 
     trainer = Trainer(
-        model = bert_model,
+        model = this_model,
         args = eval_args
     )
 

@@ -1,6 +1,7 @@
 __pycache__/
+*.pyc
+
+data/
 logs/
 model/
-
-temp.py
-experiments.ipynb  
+notebooks/
