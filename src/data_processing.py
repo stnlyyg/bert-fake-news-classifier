@@ -37,4 +37,7 @@ train_encodings = tokenize_function(train_texts)
 eval_encodings = tokenize_function(eval_texts)
 
 train_dataset = Dataset.from_dict({'input_ids': train_encodings['input_ids'], 'attention_mask': train_encodings['attention_mask'], 'label': train_labels})
-eval_dataset = Dataset.from_dict({'input_ids': eval_encodings['input_ids'], 'attention_mask': eval_encodings['attention_mask'], 'label': eval_labels})  
+eval_dataset = Dataset.from_dict({'input_ids': eval_encodings['input_ids'], 'attention_mask': eval_encodings['attention_mask'], 'label': eval_labels})
+
+train_dataset.save_to_disk(config.PROCESSED_DATA_TRAIN)
+eval_dataset.save_to_disk(config.PROCESSED_DATA_TEST)

@@ -1,7 +1,14 @@
 __pycache__/
 *.pyc
 
+*.safetensors
+*.pt
+*.pth
+*.bin
+
 data/
+hf_upload
 logs/
-model/
 notebooks/
+hf_upload/
+reports/

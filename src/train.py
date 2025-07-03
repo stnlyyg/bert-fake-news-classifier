@@ -1,11 +1,11 @@
 # Set up Trainer API → Train model → Save model
-from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer 
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, TrainingArguments, Trainer 
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 import config
-from data_processing import bert_tokenizer, train_dataset, eval_dataset
 
 this_model = AutoModelForSequenceClassification.from_pretrained(config.BASE_MODEL_PATH)
+this_tokenizer = AutoTokenizer.from_pretrained(config.BASE_MODEL_PATH)
 
 def compute_metrics(pred):
     labels = pred.label_ids
@@ -19,9 +19,9 @@ training_args = TrainingArguments(**config.TRAINING_ARGS)
 trainer = Trainer(
     model = this_model,
     args = training_args,
-    train_dataset = train_dataset,
-    eval_dataset = eval_dataset,
-    processing_class = bert_tokenizer,
+    train_dataset = config.PROCESSED_DATA_TRAIN,
+    eval_dataset = config.PROCESSED_DATA_TEST,
+    processing_class = this_tokenizer,
     compute_metrics = compute_metrics
 )
 

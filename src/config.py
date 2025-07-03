@@ -26,6 +26,10 @@ MAX_LENGTH = 256
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
 
+PROCESSED_DATA = DATA_DIR / "processed"
+PROCESSED_DATA_TRAIN = PROCESSED_DATA / "train"
+PROCESSED_DATA_TEST = PROCESSED_DATA / "test"
+
 #Model and tokenizer configuration
 BASE_MODEL_PATH = "google-bert/bert-base-uncased"
 SAVED_MODEL_PATH = MODEL_DIR / "fake-news-detection"
