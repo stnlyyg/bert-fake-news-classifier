@@ -7,16 +7,13 @@ ROOT_DIR = Path(__file__).parent.parent
 DATA_DIR = ROOT_DIR / "data"
 LOGS_DIR = ROOT_DIR / "logs"
 MODEL_DIR = ROOT_DIR / "model"
-NOTEBOOK_DIR = ROOT_DIR / "notebooks"
 REPORTS_DIR = ROOT_DIR / "reports"
 SRC_DIR = ROOT_DIR / "src"
 
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
-NOTEBOOK_DIR.mkdir(parents=True, exist_ok=True)
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-SRC_DIR.mkdir(parents=True, exist_ok=True)
 
 #Data configuration and processing
 DATA_FILE = DATA_DIR / "fakenewsdata.csv"
@@ -29,6 +26,10 @@ RANDOM_STATE = 42
 PROCESSED_DATA = DATA_DIR / "processed"
 PROCESSED_DATA_TRAIN = PROCESSED_DATA / "train"
 PROCESSED_DATA_TEST = PROCESSED_DATA / "test"
+
+PROCESSED_DATA.mkdir(parents=True, exist_ok=True)
+PROCESSED_DATA_TRAIN.mkdir(parents=True, exist_ok=True)
+PROCESSED_DATA_TEST.mkdir(parents=True, exist_ok=True)
 
 #Model and tokenizer configuration
 BASE_MODEL_PATH = "google-bert/bert-base-uncased"
