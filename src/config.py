@@ -1,4 +1,3 @@
-import torch
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -35,6 +34,7 @@ PROCESSED_DATA_TEST.mkdir(parents=True, exist_ok=True)
 BASE_MODEL_PATH = "google-bert/bert-base-uncased"
 SAVED_MODEL_PATH = MODEL_DIR / "fake-news-detection"
 BEST_CHECKPOINT_PATH = SAVED_MODEL_PATH / "checkpoint-10731"
+HUGGINGFACE_HUB_MODEL_PATH = "stnleyyg/fake-news-classifier"
 
 #Training 
 TRAINING_ARGS = {

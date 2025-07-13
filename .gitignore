@@ -1,13 +1,22 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
 
+# Model Checkpoints
 *.safetensors
 *.pt
 *.pth
 *.bin
 
+# Logs
+logs/
+*.log
+
+# Others
 data/
 hf_upload
-logs/
 notebooks/
 reports/
