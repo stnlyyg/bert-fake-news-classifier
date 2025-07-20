@@ -23,13 +23,13 @@ This project interaction can be made via:
 - Frontend: Gradio
 - Container: Docker, Docker Compose
 
-| Component      | Technology                         |
-|----------------|-------------------------------------|
-| 🧠 NLP Model   | BERT or DistilBERT (Hugging Face)   |
-| 🧪 Framework   | PyTorch, Transformers                |
-| 🌐 Backend     | FastAPI                             |
-| 🖼️ Frontend    | Gradio                              |
-| 🐳 Container   | Docker, Docker Compose              |
+| Component   | Technology                          |
+|-------------|-------------------------------------|
+| NLP Model   | BERT or DistilBERT (Hugging Face)   |
+| Framework   | PyTorch, Transformers               |
+| Backend     | FastAPI                             |
+| Frontend    | Gradio                              |
+| Container   | Docker, Docker Compose              |
 
 ---
 
