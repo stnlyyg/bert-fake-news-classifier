@@ -23,6 +23,14 @@ This project interaction can be made via:
 - Frontend: Gradio
 - Container: Docker, Docker Compose
 
+| Component      | Technology                         |
+|----------------|-------------------------------------|
+| 🧠 NLP Model   | BERT or DistilBERT (Hugging Face)   |
+| 🧪 Framework   | PyTorch, Transformers                |
+| 🌐 Backend     | FastAPI                             |
+| 🖼️ Frontend    | Gradio                              |
+| 🐳 Container   | Docker, Docker Compose              |
+
 ---
 
 # Setup
@@ -48,6 +56,15 @@ python data_processing.py
 # Training
 Fine-tuning model is done by leveraging Hugging Face Trainer API. Processed dataset will be use as input for Trainer API and training result is saved in a prepared folder. Fine-tuning uses bert-base-uncased pretrained model from google [(pretrained model)](google-bert/bert-base-uncased).
 ```
-# To do training, cd to run this in terminal
+# To do training, cd to fake-news-classifier/src and run this in terminal
 python train.py
 ```
+
+# Model evaluation
+Model evaluation metrics uses confusion matrix and processed evaluation dataset.
+```
+# To do model evaluation, cd to fake-news-classifier/src and run this in terminal
+python evaluation.py
+```
+
+#
