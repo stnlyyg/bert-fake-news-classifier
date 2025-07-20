@@ -1,7 +1,13 @@
 import gradio as gr
 import requests
+import os
 
-API_URL = "http://backend:80/classify_news/"
+USER_DOCKER = os.getenv("USE_DOCKER", "false").lower() == "true"
+
+if USER_DOCKER:
+    API_URL = "http://backend:80/classify_news/"
+else:
+    API_URL = "http://127.0.0.1:8000/classify_news/"
 
 def classify_news(text: str):
     if not text or not text.strip():
