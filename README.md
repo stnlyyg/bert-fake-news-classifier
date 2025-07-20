@@ -46,3 +46,8 @@ python data_processing.py
 ---
 
 # Training
+Fine-tuning model is done by leveraging Hugging Face Trainer API. Processed dataset will be use as input for Trainer API and training result is saved in a prepared folder. Fine-tuning uses bert-base-uncased pretrained model from google [(pretrained model)](google-bert/bert-base-uncased).
+```
+# To do training, cd to run this in terminal
+python train.py
+```
