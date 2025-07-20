@@ -61,4 +61,18 @@ Model evaluation metrics uses confusion matrix and processed evaluation dataset.
 python evaluation.py
 ```
 
-#
+# Running the App
+The app is separated into backend that contain the API and frontend with gradio for quick demo. There are two ways to run this, via local or docker compose.
+
+## Run Locally
+To run the app locally, you must first run the backend in your terminal, then follow by running frontend in separated terminal.
+```
+# head to fake-news-classifier/src/backend-api/ and run this in your first terminal
+uvicorn api:app --reload
+## You can open localhost:8000/docs to use the app through FastAPI UI
+
+# head to fake-news-classifier/src/frontend-gradio/ and run this in your second terminal
+python gradio_app.py
+## You can open localhost:7860 to use the gradio app via connection to the backend
+```
+
