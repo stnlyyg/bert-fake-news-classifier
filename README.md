@@ -29,7 +29,7 @@ This project interaction can be made via:
 
 # Setup
 ```
-# Install dependencies (run in terminal)
+# Install dependencies (run in root directory terminal)
 pip install -r requirements.txt
 ```
 
