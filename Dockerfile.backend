@@ -1,0 +1,26 @@
+# python version to run on container
+FROM python:3.10-slim-bookworm
+
+# Set environment variables
+# dont save .pyc files
+ENV PYTHONDONTWRITEBYTECODE=1
+# print logs and outputs (no buffering)
+ENV PYTHONUNBUFFERED=1
+
+# set container working dir
+WORKDIR /app
+
+# Copy requirements.txt to container
+COPY src/backend-api/requirements-backend.txt .
+
+# Container run this commands to install dependencies
+RUN pip install --no-cache-dir -r requirements-backend.txt
+
+# Copy files from this dir(exclude file in .dockerignore) to /app dir in the container
+COPY src/config.py src/
+COPY src/backend-api/ ./src/backend-api/
+COPY model/ ./model/
+
+EXPOSE 80
+
+CMD ["uvicorn", "src.backend-api.api:app", "--host", "0.0.0.0", "--port", "80"]

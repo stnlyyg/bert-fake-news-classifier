@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: fakenews-backend
+    ports:
+      - "8000:80"
+
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: fakenews-frontend
+    ports:
+      - "7860:7860"
+    depends_on:
+      - backend

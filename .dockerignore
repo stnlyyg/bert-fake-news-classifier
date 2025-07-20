@@ -16,10 +16,9 @@ logs/
 # Others
 data/
 hf_upload/
-model/
 notebooks/
 reports/
-src/__init__/
 src/data_processing/
 src/evaluation/
 src/train/
+requirements.txt

@@ -2,8 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from  transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+import sys
+from pathlib import Path
 
-import config
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from src import config
 
 app = FastAPI(
     title="Fake News Classifier API",
@@ -12,25 +16,27 @@ app = FastAPI(
 )
 
 try:
-    model = AutoModelForSequenceClassification.from_pretrained(config.HUGGINGFACE_HUB_MODEL_PATH)
-    tokenizer = AutoTokenizer.from_pretrained(config.HUGGINGFACE_HUB_MODEL_PATH)
+    model = AutoModelForSequenceClassification.from_pretrained(config.BEST_CHECKPOINT_PATH)
+    tokenizer = AutoTokenizer.from_pretrained(config.BEST_CHECKPOINT_PATH)
 except Exception as e:
     print(f'Error loading model: {e}')
     exit()
-
-class NewsText(BaseModel):
-    text: str
 
 @app.get("/")
 def get_root():
     return{"message": "Welcome to the Fake News Classifier API. Use the /docs endpoint to see the documentation."}
 
-@app.get("/classify-news")
-def classify_news(news):
-    if not news or not news.strip():
-        return {}
+class NewsText(BaseModel):
+    news: str
 
-    inputs = tokenizer(news, return_tensors='pt', truncation=True, padding=True, max_length=config.MAX_LENGTH)
+@app.post("/classify_news/")
+def classify_news(news: NewsText):
+    news_text = news.news
+
+    if not news_text or not news_text.strip():
+        return f"Error: Cannot input blank or whitespace."
+
+    inputs = tokenizer(news.news, return_tensors='pt', truncation=True, padding=True, max_length=config.MAX_LENGTH)
 
     with torch.no_grad():
         outputs = model(**inputs)
@@ -41,4 +47,4 @@ def classify_news(news):
 
     predicted_label = config.LABELS[label_index]
 
-    return f'This news is: {predicted_label}, confidence: {confidence}'
+    return {"model_result": f"This news is predicted as {predicted_label} with confidence of {confidence}"}

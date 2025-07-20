@@ -75,4 +75,4 @@ EVAL_ARGS = {
 }
 
 #App
-LABELS = ["Real", "Fake"]
+LABELS = ["real", "fake"]

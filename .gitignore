@@ -17,6 +17,6 @@ logs/
 
 # Others
 data/
-hf_upload
+hf_upload/
 notebooks/
 reports/

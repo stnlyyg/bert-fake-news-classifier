@@ -1,0 +1,26 @@
+# python version to run on container
+FROM python:3.10-slim-bookworm
+
+# Set environment variables
+# dont save .pyc files
+ENV PYTHONDONTWRITEBYTECODE=1
+# print logs and outputs (no buffering)
+ENV PYTHONUNBUFFERED=1
+
+# set container working dir
+WORKDIR /app
+
+# Copy requirements.txt to container
+COPY src/frontend-gradio/requirements-frontend.txt .
+
+# Container run this commands to install dependencies
+RUN pip install --no-cache-dir -r requirements-frontend.txt
+
+# Copy files from this dir(exclude file in .dockerignore) to /app dir in the container
+COPY src/config.py src/
+COPY src/frontend-gradio/ ./src/frontend-gradio/
+COPY model/ ./model/
+
+EXPOSE 7860
+
+CMD ["python", "src/frontend-gradio/gradio_app.py"]
