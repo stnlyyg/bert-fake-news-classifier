@@ -67,13 +67,21 @@ The app is separated into backend that contain the API and frontend with gradio 
 ## Run Locally
 To run the app locally, you must first run the backend in your terminal, then follow by running frontend in separated terminal.
 ```
-# head to fake-news-classifier/src/backend-api/ and run this in your first terminal
+# Head to fake-news-classifier/src/backend-api/ and run this in your first terminal
 uvicorn api:app --reload
 
-# head to fake-news-classifier/src/frontend-gradio/ and run this in your second terminal
+# Head to fake-news-classifier/src/frontend-gradio/ and run this in your second terminal
 python gradio_app.py
 
-You can open localhost:8000/docs to use the app through FastAPI UI  
-You can open localhost:7860 to use the gradio app via connection to the backend
+You can open localhost:8000/docs on your browser to use the app through FastAPI UI  
+You can open localhost:7860 on your browser to use the gradio app via connection to the backend
 ```
+## Run with Docker
+To run the app via Docker, make sure your docker system is up and running before procedding to next step.
+```
+# Head to root directory and run this in your terminal
+docker-compose up --build
 
+You can open localhost:8000/docs on your browser to use the app through FastAPI UI  
+You can open localhost:7860 on your browser to use the gradio app via connection to the backend
+```
