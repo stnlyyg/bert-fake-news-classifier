@@ -25,6 +25,14 @@ This project interaction can be made via:
 
 ---
 
+# Setup
+```
+# Install dependencies (run in terminal)
+pip install -r requirements.txt
+```
+
+---
+
 # Data Processing
 Dataset for fine-tuning was obtained from Kaggle [(dataset url)](https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification). This is a dataset of 72,134 news articles with 35,028 real and 37,106 fake news. The entire dataset is merged from four popular news datasets (i.e. Kaggle, McIntire, Reuters, BuzzFeed Political) to prevent over-fitting of classifiers and to provide more text data for better ML training. 
 (img df.info())
