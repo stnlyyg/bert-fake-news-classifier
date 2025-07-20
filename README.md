@@ -77,7 +77,7 @@ You can open localhost:8000/docs on your browser to use the app through FastAPI 
 You can open localhost:7860 on your browser to use the gradio app via connection to the backend
 ```
 ## Run with Docker
-To run the app via Docker, make sure your docker system is up and running before procedding to next step.
+To run the app via Docker, make sure your docker system is up and running before proceeding to next step.
 ```
 # In root directory, run this in your terminal
 docker-compose up --build
