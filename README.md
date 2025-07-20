@@ -9,8 +9,27 @@ This is my personal project in order to implement my understanding in my AI Engi
 ---
 
 # Project Overview
-
 Fake news has become a major concern across digital media. This project aims to detect and classify fake news using a transformer-based NLP model (like BERT).
 This project interaction can be made via:
 - A FastAPI REST API
 - A Gradio web interface
+
+---
+
+# Tech Stack
+- NLP Model: BERT (Hugging Face)
+- Framework: PyTorch, Transformers
+- Backend: FastAPI
+- Frontend: Gradio
+- Container: Docker, Docker Compose
+
+---
+
+# Data Processing
+Dataset for fine-tuning was obtained from Kaggle [(dataset url)](https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification). This is a dataset of 72,134 news articles with 35,028 real and 37,106 fake news. The entire dataset is merged from four popular news datasets (i.e. Kaggle, McIntire, Reuters, BuzzFeed Political) to prevent over-fitting of classifiers and to provide more text data for better ML training. 
+(img df.info())
+Dataset is cleaned without lowercasing every word since bert-base-uncased model will do it. Dataset is split into 80:20 ratio for training purpose and is transformed into format that Hugging Face Trainer API friendly. 
+
+---
+
+# Training
