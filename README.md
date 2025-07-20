@@ -38,6 +38,11 @@ Dataset for fine-tuning was obtained from Kaggle [(dataset url)](https://www.kag
 (img df.info())
 Dataset is cleaned without lowercasing every word since bert-base-uncased model will do it. Dataset is split into 80:20 ratio for training purpose and is transformed into format that Hugging Face Trainer API friendly. 
 
+```
+# To do data processing, run this in terminal
+python data_processing.py
+```
+
 ---
 
 # Training
