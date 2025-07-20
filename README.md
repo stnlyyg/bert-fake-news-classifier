@@ -17,12 +17,6 @@ This project interaction can be made via:
 ---
 
 # Tech Stack
-- NLP Model: BERT (Hugging Face)
-- Framework: PyTorch, Transformers
-- Backend: FastAPI
-- Frontend: Gradio
-- Container: Docker, Docker Compose
-
 | Component   | Technology                          |
 |-------------|-------------------------------------|
 | NLP Model   | BERT or DistilBERT (Hugging Face)   |
