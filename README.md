@@ -85,9 +85,14 @@ python gradio_app.py
 <img width="1501" height="253" alt="image" src="https://github.com/user-attachments/assets/d61cc174-889d-479c-9bf4-789d9bc9c0b8" />  
 
 ```
-You can open localhost:8000/docs on your browser to use the app through FastAPI UI  
+You can open localhost:8000/docs on your browser to use the app through FastAPI UI
+```
+<img width="1918" height="1018" alt="image" src="https://github.com/user-attachments/assets/31d4343a-1a59-4905-9997-503de9f75b0c" />
+
+```
 You can open localhost:7860 on your browser to use the gradio app via connection to the backend
 ```
+<img width="1918" height="1012" alt="image" src="https://github.com/user-attachments/assets/0616307e-9e02-4b48-8388-72a0ea537ffd" />
 
 ---
 
