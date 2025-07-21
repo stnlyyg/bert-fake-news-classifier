@@ -102,7 +102,7 @@ You can open localhost:7860 on your browser to use the gradio app via connection
 
 ---
 
-## Run with Docker
+## Run with Docker Compose
 To run the app via Docker, make sure your docker system is up and running before proceeding to next step.
 ```
 # In root directory, run this in your terminal
