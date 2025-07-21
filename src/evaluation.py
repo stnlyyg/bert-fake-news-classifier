@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
 from sklearn.metrics import classification_report, confusion_matrix
+from datasets import load_from_disk
 
 import config
 
@@ -17,7 +18,8 @@ def evaluate_model():
         args = eval_args
     )
 
-    predictions = trainer.predict(config.PROCESSED_DATA_TEST) #output of this code are PredictionOutput object containing predictions, label_ids, and metrics
+    test_dataset = load_from_disk(config.PROCESSED_DATA_TEST)
+    predictions = trainer.predict(test_dataset) #output of this code are PredictionOutput object containing predictions, label_ids, and metrics
     y_true = predictions.label_ids
     y_pred = np.argmax(predictions.predictions, axis=-1)
     target_names = ["Real", "Fake"]
@@ -32,6 +34,7 @@ def evaluate_model():
     plt.ylabel('True Label')
     plt.title('Confusion Matrix')
 
+    plt.savefig(config.EVAL_RESULT_DIR, dpi=300, bbox_inches="tight")
     plt.show()
 
 if __name__ == '__main__':
