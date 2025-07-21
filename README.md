@@ -74,12 +74,14 @@ The app is separated into backend that contain the API and frontend with gradio 
 To run the app locally, you must first run the backend in your terminal, then follow by running frontend in separated terminal.
 ```
 # cd to fake-news-classifier/src/backend-api/ and run this in your first terminal
-uvicorn api:app --reload  
+uvicorn api:app --reload
+```
 <img width="1500" height="257" alt="image" src="https://github.com/user-attachments/assets/2efc12ed-9369-46f2-84cb-d8ecc2dc06c6" />
 
-
+```
 # cd to fake-news-classifier/src/frontend-gradio/ and run this in your second terminal
 python gradio_app.py
+```
 <img width="1501" height="253" alt="image" src="https://github.com/user-attachments/assets/d61cc174-889d-479c-9bf4-789d9bc9c0b8" />
 
 
