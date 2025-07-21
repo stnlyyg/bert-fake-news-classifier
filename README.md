@@ -83,11 +83,13 @@ uvicorn api:app --reload
 python gradio_app.py
 ```
 <img width="1501" height="253" alt="image" src="https://github.com/user-attachments/assets/d61cc174-889d-479c-9bf4-789d9bc9c0b8" />
-
-
+```
 You can open localhost:8000/docs on your browser to use the app through FastAPI UI  
 You can open localhost:7860 on your browser to use the gradio app via connection to the backend
 ```
+
+---
+
 ## Run with Docker
 To run the app via Docker, make sure your docker system is up and running before proceeding to next step.
 ```
