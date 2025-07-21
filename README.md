@@ -62,7 +62,7 @@ Model evaluation metrics uses confusion matrix and processed evaluation dataset.
 # To do model evaluation, cd to fake-news-classifier/src and run this in terminal
 python evaluation.py
 ```
-Evaluation result.
+Evaluation result.  
 <img width="676" height="509" alt="image" src="https://github.com/user-attachments/assets/bd401170-bafb-41b0-ba01-ce4b4221de21" />
 
 ---
