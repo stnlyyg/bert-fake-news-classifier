@@ -54,6 +54,13 @@ Fine-tuning model is done by leveraging Hugging Face Trainer API. Processed data
 ```
 # To do training, cd to fake-news-classifier/src and run this in terminal
 python train.py
+
+Training result for 3 epochs
+{'eval_loss': 0.07674776762723923, 'eval_accuracy': 0.9780542353927872, 'eval_precision': 0.9745983797885487, 'eval_recall': 0.9821502698215027, 'eval_f1': 0.9783597518952447, 'eval_runtime': 90.4567, 'eval_samples_per_second': 158.175, 'eval_steps_per_second': 19.777, 'epoch': 1.0}
+
+{'eval_loss': 0.06746303290128708, 'eval_accuracy': 0.9838551859099804, 'eval_precision': 0.9757889009793254, 'eval_recall': 0.9926663899266639, 'eval_f1': 0.9841552918581521, 'eval_runtime': 85.0274, 'eval_samples_per_second': 168.275, 'eval_steps_per_second': 21.04, 'epoch': 2.0}
+
+{'eval_loss': 0.06384191662073135, 'eval_accuracy': 0.9870701705339671, 'eval_precision': 0.9845857418111753, 'eval_recall': 0.98989898989899, 'eval_f1': 0.987235217001311, 'eval_runtime': 85.1316, 'eval_samples_per_second': 168.069, 'eval_steps_per_second': 21.015, 'epoch': 3.0}
 ```
 
 # Model evaluation
