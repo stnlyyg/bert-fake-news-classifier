@@ -29,6 +29,9 @@ This project interaction can be made via:
 
 # Setup
 ```
+# Git clone this repo
+https://github.com/stnlyyg/fake-news-classifier.git
+
 # Install dependencies (run in root directory terminal)
 pip install -r requirements.txt
 ```
